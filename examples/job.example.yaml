@@ -1,0 +1,12 @@
+job:
+  title: B2B Content Specialist
+  company: Sample Company
+  location:
+    city: Sample City
+    country: China
+  work_mode: remote
+  minimum_experience_years: 3
+  required_languages:
+    english_speaking: intermediate
+  required_claims:
+    - Built a B2B content program
