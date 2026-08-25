@@ -1,0 +1,11 @@
+preferences:
+  preferred_roles:
+    - content_marketing
+  excluded_roles: []
+  work_modes:
+    - remote
+    - local_onsite
+  local_onsite_rules:
+    city: Sample City
+    minimum_base_salary_cny: 7000
+    requires_double_weekends: true

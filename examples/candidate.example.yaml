@@ -1,12 +1,15 @@
 candidate:
   name: Alex Chen
   location:
-    city: Shanghai
+    city: Sample City
     country: China
   experience_years: 5
   languages:
-    chinese: Native
-    english: Business written communication
+    chinese:
+      speaking: native
+    english:
+      writing: business
+      speaking: intermediate
   verified_claims:
     - Built a B2B content program
   restricted_claims:
