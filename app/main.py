@@ -63,7 +63,27 @@ print("Verified claims match:", claims_match)
 print("Work mode match:", work_mode_match)
 print("Role allowed:", role_allowed)
 
+failed_reasons = []
+
+if not experience_match:
+    failed_reasons.append("Not enough years of experience")
+
+if not english_match:
+    failed_reasons.append("English speaking level is below the requirement")
+
+if not claims_match:
+    failed_reasons.append("Required experience is not verified")
+
+if not work_mode_match:
+    failed_reasons.append("Work mode is outside the candidate's preferences")
+
+if not role_allowed:
+    failed_reasons.append("Role category is excluded by the candidate")
+
 if overall_match:
     print("Recommendation: Apply")
 else:
     print("Recommendation: Do not apply yet")
+    print("Reasons:")
+    for reason in failed_reasons:
+        print("-", reason)
