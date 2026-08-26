@@ -27,6 +27,8 @@ HonestApply 是一个本地优先、强调真实性的职位匹配工具。它�
 - Platform campaigns that screen a defined search scope, deduplicate listings,
   create one truthful resume version per suitable role, fill applications, and
   track outcomes
+- Language-aware resume tailoring: Chinese, English, or separate bilingual
+  versions according to the user's request and application destination
 
 中文概览：
 
@@ -37,6 +39,7 @@ HonestApply 是一个本地优先、强调真实性的职位匹配工具。它�
 - 本地处理资料；真实隐私文件无需提交到 Git
 - 提供 8 项自动测试和 GitHub 自动测试流程
 - 支持指定招聘平台的一站式流程：筛选、去重、逐岗定制简历、填表和记录结果
+- 根据用户要求和岗位语言生成中文、英文或中英双语简历，不默认只做英文版
 
 ## Core principles / 核心原则
 
@@ -82,7 +85,7 @@ the applications, and ask me before each final submission.
 
 ```text
 使用 $honest-apply，帮我筛选这个招聘平台上适合我的岗位，为每个合适岗位
-分别定制真实简历并填写申请；每次最终提交前让我确认。
+分别按照岗位和平台使用的语言定制真实简历并填写申请；每次最终提交前让我确认。
 ```
 
 This works with the recruitment sites the agent can access, not only LinkedIn.

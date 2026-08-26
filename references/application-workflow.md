@@ -60,6 +60,12 @@ partial sample as the whole platform.
    available document tools. Verify the generated file before upload. If document
    generation is unavailable, provide the tailored text and clearly say that no
    application-ready file was created.
+6. Choose the resume language from the user's instruction first. Otherwise match
+   the language of the posting and application form. Use Chinese for a
+   Chinese-language domestic recruitment flow, English for an English-language
+   flow, and create separate bilingual versions only when both are useful or
+   requested. Preserve official company, product, certificate, and tool names
+   when translating.
 
 ## Form filling
 

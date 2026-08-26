@@ -2,6 +2,12 @@
 
 All notable changes to HonestApply are documented in this file.
 
+## [0.3.1] - 2026-08-26
+
+### Added
+
+- Language-aware resume tailoring for Chinese, English, or bilingual application flows
+
 ## [0.3.0] - 2026-08-26
 
 ### Added

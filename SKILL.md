@@ -54,6 +54,11 @@ that as one bounded campaign:
 5. Create a separate truthful resume version for every shortlisted job. Preserve
    the master resume and verified facts; tailor only the headline, summary,
    ordering, keywords, and emphasis supported by evidence.
+   Use the user's requested language. If none is specified, match the language
+   used by the job posting and application destination: normally Chinese for
+   Chinese-language domestic platforms, English for English-language postings,
+   or separate Chinese and English versions when the destination genuinely needs
+   both. Ask only when the appropriate language is ambiguous.
 6. Fill each application using confirmed data and follow the upload and final
    submission gates in the application workflow reference.
 7. Track every result as `submitted`, `skipped`, `blocked`, `duplicate`, or

@@ -2,4 +2,4 @@ interface:
   display_name: "HonestApply"
   short_description: "Truthful job screening, tailoring, and assisted apply"
   brand_color: "#2563EB"
-  default_prompt: "Use $honest-apply to screen this recruitment platform, tailor a truthful resume for each suitable role, fill the applications, and ask me before each final submission."
+  default_prompt: "Use $honest-apply to screen this recruitment platform, tailor a truthful resume in the appropriate language for each suitable role, fill the applications, and ask me before each final submission."
