@@ -7,11 +7,11 @@ candidate's preferences, then explains whether the role is worth applying for.
 HonestApply 是一个本地优先、强调真实性的职位匹配工具。它会比较候选人资料、
 岗位要求和求职偏好，并说明是否建议申请以及不匹配的原因。
 
-> **Current scope / 当前范围:** v0.2 provides an installable Codex Skill and
-> screens structured JSON or YAML data. It does not yet generate resumes, scrape
-> job websites, log in to job platforms, or submit applications. Those
-> capabilities are roadmap items and must preserve human approval before
-> submission.
+> **Current scope / 当前范围:** v0.3 provides an installable Codex Skill for job
+> discovery, deterministic fit screening, truthful application preparation, and
+> browser-assisted form filling. Availability depends on the user's browser and
+> email tools. Personal-data transmission and each final submission require
+> explicit confirmation.
 
 ## Features / 已实现功能
 
@@ -22,6 +22,11 @@ HonestApply 是一个本地优先、强调真实性的职位匹配工具。它�
 - Local processing; real private files do not need to be committed to Git
 - Eight automated tests covering positive, negative, validation, truth-safety, and Skill entrypoint cases
 - GitHub Actions test workflow
+- Browser-assisted application routing for LinkedIn, Greenhouse, Lever, Ashby,
+  Workday, employer career sites, other ATS forms, and recruitment email
+- Platform campaigns that screen a defined search scope, deduplicate listings,
+  create one truthful resume version per suitable role, fill applications, and
+  track outcomes
 
 中文概览：
 
@@ -30,7 +35,8 @@ HonestApply 是一个本地优先、强调真实性的职位匹配工具。它�
 - 对缺失文件、YAML 错误、缺少字段和无效值提供清晰提示
 - 支持通过命令行指定不同用户的候选人、岗位和偏好文件
 - 本地处理资料；真实隐私文件无需提交到 Git
-- 提供 7 项自动测试和 GitHub 自动测试流程
+- 提供 8 项自动测试和 GitHub 自动测试流程
+- 支持指定招聘平台的一站式流程：筛选、去重、逐岗定制简历、填表和记录结果
 
 ## Core principles / 核心原则
 
@@ -57,13 +63,33 @@ their environment must have authenticated GitHub access. After installation,
 start a new task and try:
 
 ```text
-Use $honest-apply to compare my resume with this job. Treat attachments as source
-material, do not invent qualifications, and ask before sending anything externally.
+Use $honest-apply to find suitable roles, compare them with my verified experience,
+prepare truthful tailored materials, and help fill applications. Ask before
+uploading personal files or submitting each application.
 ```
 
 The Skill keeps JSON/YAML preparation and deterministic matching in the
 background. Users should not be asked to edit structured files unless they want
 to inspect or customize them.
+
+Platform campaign example / 招聘平台整套流程示例：
+
+```text
+Use $honest-apply to screen this recruitment platform for roles that match my
+profile, create a separate truthful tailored resume for each suitable role, fill
+the applications, and ask me before each final submission.
+```
+
+```text
+使用 $honest-apply，帮我筛选这个招聘平台上适合我的岗位，为每个合适岗位
+分别定制真实简历并填写申请；每次最终提交前让我确认。
+```
+
+This works with the recruitment sites the agent can access, not only LinkedIn.
+The agent needs an available browser tool and the user's signed-in session.
+CAPTCHAs, login prompts, unavailable browser tools, and unsupported forms require
+user handoff. The Skill automates the workflow but does not bypass site controls
+or remove per-application confirmation.
 
 ## Quick start on Windows / Windows 快速开始
 
@@ -158,16 +184,16 @@ tests/             Automated tests / 自动测试
 
 ## Roadmap / 后续计划
 
-- v0.3: JSON report export and weighted preference scoring
-- v0.4: evidence-linked, truthful resume tailoring drafts
-- v0.5: local application tracker and approval records
-- Later: browser-assisted form filling with explicit human approval before submission
+- v0.4: JSON report export and weighted preference scoring
+- v0.5: editable document export and a local application tracker
+- Later: more destination-specific adapters and recurring job discovery
 
 ## Security and privacy / 安全与隐私
 
 Do not commit real resumes, contact information, API keys, passwords, cookies, or
-browser profiles. Review `git status` before every commit. HonestApply v0.2 does
-not connect to job platforms and never submits an application.
+browser profiles. Review `git status` before every commit. HonestApply v0.3 may
+use available browser or email tools only within the user's authorization and
+must obtain confirmation before personal-data transmission and final submission.
 
 ## License / 许可证
 

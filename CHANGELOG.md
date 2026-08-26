@@ -2,6 +2,19 @@
 
 All notable changes to HonestApply are documented in this file.
 
+## [0.3.0] - 2026-08-26
+
+### Added
+
+- Job discovery, preparation, and application operating modes
+- Destination routing for LinkedIn, major ATS forms, employer sites, and email
+- Truthful resume and form-answer tailoring rules
+- Browser-assisted form-filling workflow and stopping conditions
+- Personal-data upload and per-application final-submission confirmation gates
+- Private application tracking guidance
+- Bounded recruitment-platform campaigns with deduplication and coverage reporting
+- Separate truthful resume versions and outcome tracking for each suitable role
+
 ## [0.2.1] - 2026-08-26
 
 ### Added
