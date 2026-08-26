@@ -28,6 +28,18 @@ class InputValidationTests(unittest.TestCase):
         with self.assertRaisesRegex(InputValidationError, "must be one of"):
             validate_candidate(candidate)
 
+    def test_claim_cannot_be_verified_and_restricted(self):
+        candidate = {
+            "name": "Example Candidate",
+            "experience_years": 5,
+            "languages": {"english": {"speaking": "intermediate"}},
+            "verified_claims": ["Unverified industry award"],
+            "restricted_claims": ["Unverified industry award"],
+        }
+
+        with self.assertRaisesRegex(InputValidationError, "both verified and restricted"):
+            validate_candidate(candidate)
+
 
 if __name__ == "__main__":
     unittest.main()

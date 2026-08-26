@@ -74,6 +74,7 @@ def main():
     print("Experience match:", result["experience_match"])
     print("English speaking match:", result["english_match"])
     print("Verified claims match:", result["claims_match"])
+    print("Restricted claims clear:", result["restricted_claims_clear"])
     print("Work mode match:", result["work_mode_match"])
     print("Role allowed:", result["role_allowed"])
 

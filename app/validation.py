@@ -43,6 +43,11 @@ def validate_candidate(candidate):
         raise InputValidationError("candidate.verified_claims must be a list")
     if not isinstance(restricted_claims, list):
         raise InputValidationError("candidate.restricted_claims must be a list")
+    overlapping_claims = set(verified_claims) & set(restricted_claims)
+    if overlapping_claims:
+        raise InputValidationError(
+            "the same claim cannot be both verified and restricted"
+        )
 
 
 def validate_job(job):

@@ -22,6 +22,10 @@ def evaluate_match(candidate, job, preferences):
     claims_match = all(
         claim in candidate["verified_claims"] for claim in job["required_claims"]
     )
+    restricted_claims_clear = all(
+        claim not in candidate["restricted_claims"]
+        for claim in job["required_claims"]
+    )
     work_mode_match = job["work_mode"] in preferences["work_modes"]
     role_allowed = job["role_category"] not in preferences["excluded_roles"]
 
@@ -29,6 +33,7 @@ def evaluate_match(candidate, job, preferences):
         "experience_match": experience_match,
         "english_match": english_match,
         "claims_match": claims_match,
+        "restricted_claims_clear": restricted_claims_clear,
         "work_mode_match": work_mode_match,
         "role_allowed": role_allowed,
     }
@@ -37,6 +42,7 @@ def evaluate_match(candidate, job, preferences):
         "experience_match": "Not enough years of experience",
         "english_match": "English speaking level is below the requirement",
         "claims_match": "Required experience is not verified",
+        "restricted_claims_clear": "Job requires a restricted candidate claim",
         "work_mode_match": "Work mode is outside the candidate's preferences",
         "role_allowed": "Role category is excluded by the candidate",
     }

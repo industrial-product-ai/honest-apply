@@ -8,6 +8,7 @@ CANDIDATE = {
     "experience_years": 5,
     "languages": {"english": {"speaking": "intermediate"}},
     "verified_claims": ["Built a B2B content program"],
+    "restricted_claims": [],
 }
 
 JOB = {
@@ -49,6 +50,21 @@ class MatchEvaluationTests(unittest.TestCase):
         self.assertFalse(result["overall_match"])
         self.assertIn(
             "Role category is excluded by the candidate",
+            result["failed_reasons"],
+        )
+
+    def test_restricted_claim_cannot_be_used(self):
+        candidate = copy.deepcopy(CANDIDATE)
+        candidate["restricted_claims"] = ["Unverified industry award"]
+        job = copy.deepcopy(JOB)
+        job["required_claims"] = ["Unverified industry award"]
+
+        result = evaluate_match(candidate, job, PREFERENCES)
+
+        self.assertFalse(result["overall_match"])
+        self.assertFalse(result["restricted_claims_clear"])
+        self.assertIn(
+            "Job requires a restricted candidate claim",
             result["failed_reasons"],
         )
 
