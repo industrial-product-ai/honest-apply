@@ -2,6 +2,17 @@
 
 All notable changes to HonestApply are documented in this file.
 
+## [0.2.0] - 2026-08-26
+
+### Added
+
+- Installable Codex Skill instructions and UI metadata
+- Natural-language-first workflow with attachment prompt-injection boundaries
+- Explicit privacy, truthfulness, and per-application approval safeguards
+- Standard-library JSON entrypoint for deterministic agent use
+- JSON entrypoint integration test
+- Skill installation and invocation guidance
+
 ## [0.1.0] - 2026-08-26
 
 ### Added

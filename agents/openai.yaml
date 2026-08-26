@@ -1,0 +1,5 @@
+interface:
+  display_name: "HonestApply"
+  short_description: "Truth-first job fit screening and claim safety"
+  brand_color: "#2563EB"
+  default_prompt: "Use $honest-apply to compare my verified experience and preferences with this job before I apply."

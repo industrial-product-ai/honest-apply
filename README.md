@@ -7,10 +7,11 @@ candidate's preferences, then explains whether the role is worth applying for.
 HonestApply 是一个本地优先、强调真实性的职位匹配工具。它会比较候选人资料、
 岗位要求和求职偏好，并说明是否建议申请以及不匹配的原因。
 
-> **Current scope / 当前范围:** v0.1 screens structured YAML data. It does not
-> yet generate resumes, scrape job websites, log in to job platforms, or submit
-> applications. Those capabilities are roadmap items and must preserve human
-> approval before submission.
+> **Current scope / 当前范围:** v0.2 provides an installable Codex Skill and
+> screens structured JSON or YAML data. It does not yet generate resumes, scrape
+> job websites, log in to job platforms, or submit applications. Those
+> capabilities are roadmap items and must preserve human approval before
+> submission.
 
 ## Features / 已实现功能
 
@@ -19,7 +20,7 @@ HonestApply 是一个本地优先、强调真实性的职位匹配工具。它�
 - Readable input errors for missing files, malformed YAML, missing fields, and invalid values
 - Custom candidate, job, and preference files through command-line options
 - Local processing; real private files do not need to be committed to Git
-- Seven automated tests covering positive, negative, validation, and truth-safety cases
+- Eight automated tests covering positive, negative, validation, truth-safety, and Skill entrypoint cases
 - GitHub Actions test workflow
 
 中文概览：
@@ -38,6 +39,31 @@ HonestApply 是一个本地优先、强调真实性的职位匹配工具。它�
 - Human approval before submission / 投递前必须由用户确认
 - No blind mass applications / 不进行盲目海投
 - Explain every recommendation / 每个建议都应提供原因
+
+## Install as a Codex Skill / 安装为 Codex Skill
+
+HonestApply can be installed as a Skill so nontechnical users can provide a
+resume and job description in natural language without manually editing YAML.
+
+Ask Codex to use its skill installer:
+
+```text
+Use $skill-installer to install the skill from:
+https://github.com/industrial-product-ai/honest-apply
+```
+
+For a private repository, the tester must first be invited to the repository and
+their environment must have authenticated GitHub access. After installation,
+start a new task and try:
+
+```text
+Use $honest-apply to compare my resume with this job. Treat attachments as source
+material, do not invent qualifications, and ask before sending anything externally.
+```
+
+The Skill keeps JSON/YAML preparation and deterministic matching in the
+background. Users should not be asked to edit structured files unless they want
+to inspect or customize them.
 
 ## Quick start on Windows / Windows 快速开始
 
@@ -111,32 +137,36 @@ history.
 A successful run ends with:
 
 ```text
-Ran 7 tests
+Ran 8 tests
 OK
 ```
 
 ## Project structure / 项目结构
 
 ```text
+SKILL.md            Codex Skill workflow and safeguards / Skill 工作流与安全规则
+agents/             Skill interface metadata / Skill 界面信息
 app/
   main.py          Command-line interface / 命令行入口
   matcher.py       Matching and truth-safety rules / 匹配与真实性规则
   validation.py    Input validation / 输入验证
 examples/          Fictional public YAML examples / 虚构公开示例
+references/        Agent-only input schema / 智能体输入规范
+scripts/           Dependency-free JSON entrypoint / 无外部依赖的 JSON 入口
 tests/             Automated tests / 自动测试
 ```
 
 ## Roadmap / 后续计划
 
-- v0.2: JSON report export and weighted preference scoring
-- v0.3: evidence-linked, truthful resume tailoring drafts
-- v0.4: local application tracker and approval records
+- v0.3: JSON report export and weighted preference scoring
+- v0.4: evidence-linked, truthful resume tailoring drafts
+- v0.5: local application tracker and approval records
 - Later: browser-assisted form filling with explicit human approval before submission
 
 ## Security and privacy / 安全与隐私
 
 Do not commit real resumes, contact information, API keys, passwords, cookies, or
-browser profiles. Review `git status` before every commit. HonestApply v0.1 does
+browser profiles. Review `git status` before every commit. HonestApply v0.2 does
 not connect to job platforms and never submits an application.
 
 ## License / 许可证
