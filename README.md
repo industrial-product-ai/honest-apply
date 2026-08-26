@@ -171,5 +171,9 @@ not connect to job platforms and never submits an application.
 
 ## License / 许可证
 
-No open-source license has been selected yet. All rights are reserved by default.
-Choose and add a license before presenting this repository as open source.
+HonestApply is available under the [MIT License](LICENSE). You may use, modify,
+and distribute it, including commercially, provided that the copyright and
+license notice are retained. The software is provided without warranty.
+
+HonestApply 采用 [MIT License](LICENSE)。在保留版权与许可证声明的前提下，
+可以使用、修改、分发及商业使用；软件按现状提供，不包含任何担保。

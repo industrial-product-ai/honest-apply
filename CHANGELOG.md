@@ -2,6 +2,12 @@
 
 All notable changes to HonestApply are documented in this file.
 
+## [0.2.1] - 2026-08-26
+
+### Added
+
+- MIT License for public Skill installation, use, modification, and distribution
+
 ## [0.2.0] - 2026-08-26
 
 ### Added
